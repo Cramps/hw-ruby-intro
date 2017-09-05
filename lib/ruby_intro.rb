@@ -3,15 +3,28 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  # arr.sum (jk but if we switched to 2.4.0 I'd totally do it)
+  sum = 0
+  arr.each do |i|
+    sum += i
+  end
+  sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  sum arr.max 2
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  sum_to_n = false
+  if arr.size > 1
+    arr.each_with_index do |x,i|
+      arr.each_with_index do |y,j|
+        sum_to_n = true if x + y == n && i != j
+      end
+    end
+  end
+  sum_to_n
 end
 
 # Part 2

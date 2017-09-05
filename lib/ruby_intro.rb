@@ -44,5 +44,19 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn
+  attr_accessor :price
+  
+  def initialize isbn, price
+    raise ArgumentError unless isbn.is_a?(String) && isbn.size > 0 && price.is_a?(Numeric) && price > 0
+    @isbn = isbn
+    @price = price.round 2
+  end
+  
+  def price_as_string
+    # Got the sprintf idea from:
+    # https://stackoverflow.com/questions/15900537/to-d-to-always-return-2-decimals-places-in-ruby
+    # https://ruby-doc.org/core-2.3.0/Kernel.html#method-i-sprintf
+    "$#{sprintf '%#.2f', @price}"
+  end
 end

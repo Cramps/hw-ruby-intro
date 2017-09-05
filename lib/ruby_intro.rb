@@ -30,15 +30,15 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  !s.match(/\A[qwrtypsdfghjklzxcvbnm].*/i).nil?
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  s == '0' ? true : s.match(/\A[01]*100\z/)
 end
 
 # Part 3
